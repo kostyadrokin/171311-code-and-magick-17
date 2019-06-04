@@ -181,6 +181,46 @@
   </div>
 </template>
 
+<script>
+
+  var fireballSize = 22;
+  wizardSpeed = 3;
+  wizardWidth = 70;
+  var wizardHeight;
+
+
+  // Функция определения скорости полета фаербола
+
+  var getFireballSpeed = function(left) {
+    if (left) {
+      return 5;
+    }
+    return 2;
+  }
+  
+  
+  // Функция определяет пропорции Пендальфа
+  
+  var getWizardHeight = function() {
+    return wizardHeight = 1.337 * wizardWidth;
+  }
+
+
+  // Функция размещает Пендальфа по середине экрана
+
+  var getWizardX = function (width) {
+    return width / 2 - wizardWidth / 2;
+  }
+
+
+  // Функция размещает Пендальфа на 2/3 высоты игровой области
+
+  var getWizardY = function (height) {
+    return height / 3 - wizardHeight;
+  }
+
+</script>
+
 <script src="js/game.js"></script>
 
 </body>
