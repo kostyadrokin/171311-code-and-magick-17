@@ -1,3 +1,5 @@
+'use strict';
+
 var CLOUD_HEIGHT = 270;
 var CLOUD_WIDTH = 420;
 var CLOUD_X = 100;
@@ -14,15 +16,13 @@ var BARS_GAP = 90;
 
 
 // Рисуем всплывающие окно
-
 var renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
-}
+};
 
 
 // Находим максимальное время в массиве
-
 var getMaxElement = function(array) {
   var maxElement = array[0];
   for (var i = 0; i < array.length; i++) {
@@ -31,11 +31,10 @@ var getMaxElement = function(array) {
     }
   }
   return maxElement;
-}
+};
 
 
 // Отрисовываем всё
-
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
@@ -48,15 +47,13 @@ window.renderStatistics = function (ctx, names, times) {
   var maxTime = getMaxElement(times);
 
 
-// Генерируем рэндомную прозрачность
-
+  // Генерируем рэндомную прозрачность
   function getRandomOpacity(min, max) {
     return Math.random() * (max - min) + min;
-  }
+  };
 
 
-// Риусем гистограмму
-
+  // Риусем гистограмму
   for (var i = 0; i < times.length; i++) {
     var NEW_START = TOP_BAR_HEIGHT - (TOP_BAR_HEIGHT * times[i] / maxTime);
 
