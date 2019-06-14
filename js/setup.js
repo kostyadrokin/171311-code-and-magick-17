@@ -2,14 +2,13 @@
 document.querySelector('.setup').classList.remove('hidden');
 document.querySelector('.setup-similar').classList.remove('hidden');
 
-//Генерация случайного числа для выбора случайного имени и фамилии
+// Генерация случайного числа для выбора случайного имени и фамилии
 var getRandom = function (min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
-  };
+};
 
 var WIZARDS_NAMES = [
-    'Иван',
-    'Хуан Себастьян',
+    'Иван', 'Хуан Себастьян',
     'Мария',
     'Кристоф',
     'Виктор',
@@ -47,41 +46,41 @@ var WIZARDS_EYESCOLOR = [
 ];
 
 var wizards = [
-{
-    name : WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
-    coatColor : WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
-    eyesColor : WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
-},
-{
-    name : WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
-    coatColor : WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
-    eyesColor : WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
-},
-{
-    name : WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
-    coatColor : WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
-    eyesColor : WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
-},
-{
-    name : WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
-    coatColor : WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
-    eyesColor : WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
-}
+    {
+        name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
+        coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
+        eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
+    },
+    {
+        name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
+        coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
+        eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
+    },
+    {
+        name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
+        coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
+        eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
+    },
+    {
+        name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
+        coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
+        eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
+    }
 ];
 
 var similarListElement = document.querySelector('.setup-similar-list');
 
-//Находим шаблон в HTML файле
+// Находим шаблон в HTML файле
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
 
 for (var i = 0; i < wizards.length; i++) {
-  var wizardElement = similarWizardTemplate.cloneNode(true);
+    var wizardElement = similarWizardTemplate.cloneNode(true);
   
-  wizardElement.querySelector('.setup-similar-label').textContent = wizards[i].name;
-  wizardElement.querySelector('.wizard-coat').style.fill = wizards[i].coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizards[i].eyesColor;
+    wizardElement.querySelector('.setup-similar-label').textContent = wizards[i].name;
+    wizardElement.querySelector('.wizard-coat').style.fill = wizards[i].coatColor;
+    wizardElement.querySelector('.wizard-eyes').style.fill = wizards[i].eyesColor;
   
-  similarListElement.appendChild(wizardElement);
+    similarListElement.appendChild(wizardElement);
 };
