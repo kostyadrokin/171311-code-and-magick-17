@@ -70,7 +70,7 @@ var wizards = [
 
 var similarListElement = document.querySelector('.setup-similar-list');
 
-// Находим шаблон в HTML файле
+// Находим шаблон в HTML файле --
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
 for (var i = 0; i < wizards.length; i++) {
