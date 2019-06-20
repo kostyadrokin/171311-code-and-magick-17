@@ -26,14 +26,6 @@ var onPopupEscPress = function (evt) {
 var openPopup = function () {
   setupWindow.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
-//  document.getElementsByClassName('setup-wizard-form').addEventListener('click', function () {
- //   form.submit();
- // });
-  buttonSubmit.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ENTER_KEYCODE) {
-        // Тут должна отправляться форма
-    }
-  });
   wizardCoatColor.addEventListener('click', function () {
     wizardCoatColor.style.fill = WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)];
   });
