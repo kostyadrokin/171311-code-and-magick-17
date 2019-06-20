@@ -147,6 +147,3 @@ var renderWizards = function () {
     similarListElement.appendChild(wizardElement);
   }
 };
-
-
-
