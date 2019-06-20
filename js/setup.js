@@ -6,7 +6,6 @@ var setupWindow = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = setupWindow.querySelector('.setup-close');
 var userIcon = document.querySelector('.setup-open-icon');
-var buttonSubmit = setupWindow.querySelector('.setup-submit');
 var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
 var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
@@ -15,7 +14,7 @@ var userNameInput = document.querySelector('.setup-user-name');
 
 // Функция закрытия модального окна по нажатию на ESC
 var onPopupEscPress = function (evt) {
-  if (userNameInput != document.activeElement) { // Проверка фокуса в поле имени игрока
+  if (userNameInput !== document.activeElement) { // Проверка фокуса в поле имени игрока
     if (evt.keyCode === ESC_KEYCODE) {
       closePopup();
     }
@@ -35,7 +34,7 @@ var openPopup = function () {
   wizardFireballColor.addEventListener('click', function () {
     var fireballColor = WIZARDS_FIREBALLCOLOR[getRandom(0, WIZARDS_FIREBALLCOLOR.length)];
     document.querySelector('.setup-fireball-wrap').style.background = fireballColor;
-    document.querySelector('.setup-fireball-input').value = fireballColor; ;
+    document.querySelector('.setup-fireball-input').value = fireballColor;
   });
 };
 
