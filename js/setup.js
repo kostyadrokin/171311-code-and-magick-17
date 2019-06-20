@@ -123,11 +123,11 @@ var wizards = [];
 var createDataWizards = function () {
   for (var i = 0; i < WIZARDS_KOL; i++) {
     wizards.push(
-      {
-      name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
-      coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
-      eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
-      }
+        {
+          name: WIZARDS_NAMES[getRandom(0, WIZARDS_NAMES.length)] + ' ' + WIZARDS_LASTNAMES[getRandom(0, WIZARDS_LASTNAMES.length)],
+          coatColor: WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)],
+          eyesColor: WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)]
+        }
     );
   }
 };
@@ -147,7 +147,6 @@ var renderWizards = function () {
     similarListElement.appendChild(wizardElement);
   }
 };
-
 
 
 
