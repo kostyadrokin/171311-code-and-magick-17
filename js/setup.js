@@ -36,7 +36,6 @@ var openPopup = function () {
     document.querySelector('.setup-fireball-wrap').style.background = fireballColor;
     document.querySelector('.setup-fireball-input').value = fireballColor;
   });
-  renderWizards();
 };
 
 var closePopup = function () {
@@ -147,3 +146,4 @@ var renderWizards = function () {
     similarListElement.appendChild(wizardElement);
   }
 };
+renderWizards();
