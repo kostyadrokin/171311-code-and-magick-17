@@ -93,13 +93,13 @@ itemOnShopList[0].addEventListener('mousedown', function (evt) {
         sverkaCoordsStar.y + (sverkaCoordsStar.height / 2) <= sverkaCoordsBag.y + 65 &&
         sverkaCoordsStar.x + (sverkaCoordsStar.width / 2) >= sverkaCoordsBag.x &&
         sverkaCoordsStar.x + (sverkaCoordsStar.width / 2) <= sverkaCoordsBag.x + 65
-          ) {
-            itemsBagsList[i].appendChild(itemOnShopList[0]);
-            itemOnShopList[0].style.top = 0 + 'px';
-            itemOnShopList[0].style.left = 0 + 'px';
-            } else {
-              itemOnShopList[0].removeAttribute('style');
-            }
+      ) {
+        itemsBagsList[i].appendChild(itemOnShopList[0]);
+        itemOnShopList[0].style.top = 0 + 'px';
+        itemOnShopList[0].style.left = 0 + 'px';
+      } else {
+        itemOnShopList[0].removeAttribute('style');
+      }
     }
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
@@ -107,4 +107,4 @@ itemOnShopList[0].addEventListener('mousedown', function (evt) {
 
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseup', onMouseUp);
-})
+});
