@@ -2,6 +2,8 @@
 
 var setupWindow = document.querySelector('.setup');
 var dialogHandler = setupWindow.querySelector('.upload');
+var itemsShopList = setupWindow.querySelector('.setup-artifacts-shop');
+var itemOnShopList = itemsShopList.querySelector('.setup-artifacts-cell');
 
 dialogHandler.addEventListener('mousedown', function (evt) {
   evt.preventDefault();
@@ -39,8 +41,8 @@ dialogHandler.addEventListener('mousedown', function (evt) {
     document.removeEventListener('mouseup', onMouseUp);
 
     if (dragged) {
-      var onClickPreventDefault = function (evt) {
-        evt.preventDefault();
+      var onClickPreventDefault = function (onClickEvt) {
+        onClickEvt.preventDefault();
         dialogHandler.removeEventListener('click', onClickPreventDefault);
       };
       dialogHandler.addEventListener('click', onClickPreventDefault);
@@ -50,4 +52,26 @@ dialogHandler.addEventListener('mousedown', function (evt) {
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseup', onMouseUp);
 });
+/*
+console.log(itemsShopList);
 
+itemOnShopList.addEventListener('mousedown', function (evt) {
+  evt.preventDefault();
+
+  var startCoordsItem = {
+    x: evt.clientX,
+    y: evt.clientY
+  };
+
+  var onMouseMove = function () {
+
+  };
+
+  var onMouseUp = function () {
+
+  };
+
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', onMouseUp);
+})
+*/
