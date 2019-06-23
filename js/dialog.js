@@ -1,4 +1,5 @@
 'use strict';
+var setupWindow = document.querySelector('.setup');
 var dialogHandler = setupWindow.querySelector('.upload');
 
 dialogHandler.addEventListener('mousedown', function (evt) {
@@ -23,7 +24,7 @@ dialogHandler.addEventListener('mousedown', function (evt) {
     startCoords = {
       x: moveEvt.clientX,
       y: moveEvt.clientY
-    }
+    };
 
     setupWindow.style.top = (setupWindow.offsetTop - shift.y) + 'px';
     setupWindow.style.left = (setupWindow.offsetLeft - shift.x) + 'px';
@@ -39,7 +40,7 @@ dialogHandler.addEventListener('mousedown', function (evt) {
     if (dragged) {
       var onClickPreventDefault = function (evt) {
         evt.preventDefault();
-        dialogHandler.removeEventListener('click', onClickPreventDefault)
+        dialogHandler.removeEventListener('click', onClickPreventDefault);
       };
       dialogHandler.addEventListener('click', onClickPreventDefault);
     }
