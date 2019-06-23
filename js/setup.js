@@ -40,6 +40,8 @@ var openPopup = function () {
 
 var closePopup = function () {
   setupWindow.classList.add('hidden');
+  setupWindow.style.top = 80 + 'px';
+  setupWindow.style.left = 50 + '%';
 };
 
 setupOpen.addEventListener('click', function () {
