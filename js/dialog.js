@@ -1,11 +1,71 @@
 'use strict';
-
+(function () {
 var setupWindow = document.querySelector('.setup');
 var dialogHandler = setupWindow.querySelector('.upload');
 var itemsShopList = setupWindow.querySelector('.setup-artifacts-shop');
 var itemOnShopList = itemsShopList.querySelector('.setup-artifacts-cell').querySelectorAll('img');
 var itemsBagsList = setupWindow.querySelector('.setup-artifacts').querySelectorAll('.setup-artifacts-cell');
+var setupWindow = document.querySelector('.setup');
+var setupOpen = document.querySelector('.setup-open');
+var setupClose = setupWindow.querySelector('.setup-close');
+var userIcon = document.querySelector('.setup-open-icon');
+var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
+var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
+var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
+var userNameInput = document.querySelector('.setup-user-name');
 
+// Функция закрытия модального окна по нажатию на ESC
+var onPopupEscPress = function (evt) {
+  if (userNameInput !== document.activeElement) { // Проверка фокуса в поле имени игрока
+    window.util.isEscEvent(evt, closePopup);
+  }
+};
+
+// Функция открытия модального окна с разными обработчиками для объектов этого окна
+var openPopup = function () {
+  setupWindow.classList.remove('hidden');
+  document.addEventListener('keydown', onPopupEscPress);
+  wizardCoatColor.addEventListener('click', function () {
+    wizardCoatColor.style.fill = WIZARDS_COATCOLOR[getRandom(0, WIZARDS_COATCOLOR.length)];
+  });
+  wizardEyesColor.addEventListener('click', function () {
+    wizardEyesColor.style.fill = WIZARDS_EYESCOLOR[getRandom(0, WIZARDS_EYESCOLOR.length)];
+  });
+  wizardFireballColor.addEventListener('click', function () {
+    var fireballColor = WIZARDS_FIREBALLCOLOR[getRandom(0, WIZARDS_FIREBALLCOLOR.length)];
+    document.querySelector('.setup-fireball-wrap').style.background = fireballColor;
+    document.querySelector('.setup-fireball-input').value = fireballColor;
+  });
+};
+
+var closePopup = function () {
+  setupWindow.classList.add('hidden');
+  setupWindow.style.top = 80 + 'px';
+  setupWindow.style.left = 50 + '%';
+};
+
+setupOpen.addEventListener('click', function () {
+  openPopup();
+});
+
+userIcon.addEventListener('keydown', function (evt) {
+  window.util.isEnterEvent(evt, openPopup);
+});
+
+setupClose.addEventListener('click', function () {
+  closePopup();
+});
+
+setupClose.addEventListener('keydown', function (evt) {
+  window.util.isEnterEvent(evt, closePopup);
+});
+
+// Валидация инпута имени игрока
+document.querySelector('.setup-user-name').maxlength = '25';
+document.querySelector('.setup-user-name').setAttribute('minlength', 2);
+document.querySelector('.setup-similar').classList.remove('hidden');
+
+// Обработчик передаскивания окна
 dialogHandler.addEventListener('mousedown', function (evt) {
   evt.preventDefault();
 
@@ -54,7 +114,7 @@ dialogHandler.addEventListener('mousedown', function (evt) {
   document.addEventListener('mouseup', onMouseUp);
 });
 
-
+// Обработчик перетаскивания звездочки
 itemOnShopList[0].addEventListener('mousedown', function (evt) {
   evt.preventDefault();
 
@@ -108,3 +168,4 @@ itemOnShopList[0].addEventListener('mousedown', function (evt) {
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseup', onMouseUp);
 });
+}) ();
