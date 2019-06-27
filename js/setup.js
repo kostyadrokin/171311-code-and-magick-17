@@ -1,6 +1,9 @@
 'use strict';
 (function () {
   var WIZARDS_KOL = 4;
+  var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
+  var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
+  var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
 
   // Генерация случайного числа для выбора случайного имени и фамилии
   var getRandom = function (min, max) {
@@ -93,4 +96,4 @@
     }
   };
   renderWizards();
-}) ();
+})();
