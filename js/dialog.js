@@ -1,14 +1,15 @@
 'use strict';
 (function () {
-  var dialogHandler = setupWindow.querySelector('.upload');
-  var itemsShopList = setupWindow.querySelector('.setup-artifacts-shop');
-  var itemOnShopList = itemsShopList.querySelector('.setup-artifacts-cell').querySelectorAll('img');
-  var itemsBagsList = setupWindow.querySelector('.setup-artifacts').querySelectorAll('.setup-artifacts-cell');
+
   var setupWindow = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setupWindow.querySelector('.setup-close');
   var userIcon = document.querySelector('.setup-open-icon');
   var userNameInput = document.querySelector('.setup-user-name');
+  var dialogHandler = setupWindow.querySelector('.upload');
+  var itemsShopList = setupWindow.querySelector('.setup-artifacts-shop');
+  var itemOnShopList = itemsShopList.querySelector('.setup-artifacts-cell').querySelectorAll('img');
+  var itemsBagsList = setupWindow.querySelector('.setup-artifacts').querySelectorAll('.setup-artifacts-cell');
 
   // Функция закрытия модального окна по нажатию на ESC
   var onPopupEscPress = function (evt) {
