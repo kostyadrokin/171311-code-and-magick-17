@@ -53,19 +53,19 @@
   var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
   var renderWizards = function (wizard) {
-      var wizardElement = similarWizardTemplate.cloneNode(true);
-      wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
-      wizardElement.querySelector('.wizard-coat').style.fill = wizard.colorCoat;
-      wizardElement.querySelector('.wizard-eyes').style.fill = wizard.colorEyes;
-      return wizardElement;
+    var wizardElement = similarWizardTemplate.cloneNode(true);
+    wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
+    wizardElement.querySelector('.wizard-coat').style.fill = wizard.colorCoat;
+    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.colorEyes;
+    return wizardElement;
   };
 
   var setupWindow = document.querySelector('.setup');
 
   var form = setupWindow.querySelector('.setup-wizard-form');
 
-  form.addEventListener('submit', function (evt) {
-    window.backend.save(new FormData(form), function (response) {
+  form.addEventListener('submit', function () {
+    window.backend.save(new FormData(form), function () {
       setupWindow.classList.add('hidden');
     });
   });
