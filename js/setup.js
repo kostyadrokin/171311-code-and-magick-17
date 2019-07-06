@@ -61,13 +61,13 @@
   };
 
   var setupWindow = document.querySelector('.setup');
+
   var form = setupWindow.querySelector('.setup-wizard-form');
 
   form.addEventListener('submit', function (evt) {
     window.backend.save(new FormData(form), function (response) {
       setupWindow.classList.add('hidden');
     });
-    evt.preventDefault();
   });
 
   window.backend.load(function (wizards) {
